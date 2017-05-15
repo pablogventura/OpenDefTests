@@ -1,0 +1,34 @@
+Spectrum = [2, 1]
+NOT DEFINABLE
+Counterexample:
+  Homomorphism(
+    28->7
+    39->7
+  from:
+    RelationalModel(universe=[28, 39],relations={'R5': {(39, 28), (39, 39)}, 'R2': set(), 'R6': set(), 'R7': {(39, 28)}, 'R1': set(), 'T0': {(28, 39)}, 'R8': {(39, 28), (39, 39)}, 'R9': {(39, 28), (28, 39), (39, 39)}, 'R3': {(39, 28), (39, 39)}, 'R0': set(), 'R4': set()})
+  to:
+    RelationalModel(universe=[7],relations={'R2': set(), 'R6': {(7, 7)}, 'R7': {(7, 7)}, 'R4': set(), 'R1': {(7, 7)}, 'T0': set(), 'R8': {(7, 7)}, 'R9': {(7, 7)}, 'R3': {(7, 7)}, 'R0': set(), 'R5': {(7, 7)}})
+  )
+
+
+State before abort: 
+  Diversity = 819
+    1-diversity = 39
+    2-diversity = 780
+  #Auts = 819
+  #Isos = 1521
+  18567 calls to Minion
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../positives.py':
+
+      30692.686896      task-clock (msec)         #    0.564 CPUs utilized          
+           120,872      context-switches          #    0.004 M/sec                  
+            29,422      cpu-migrations            #    0.959 K/sec                  
+         9,511,834      page-faults               #    0.310 M/sec                  
+   138,831,033,023      cycles                    #    4.523 GHz                    
+   170,838,591,094      instructions              #    1.23  insn per cycle         
+    35,328,236,968      branches                  # 1151.031 M/sec                  
+       433,538,205      branch-misses             #    1.23% of all branches        
+
+      54.464271269 seconds time elapsed
+

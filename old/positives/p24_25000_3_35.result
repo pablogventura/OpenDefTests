@@ -1,0 +1,38 @@
+Spectrum=[3, 2, 1]
+Traceback (most recent call last):
+  File "main.py", line 96, in <module>
+    main()
+  File "main.py", line 15, in main
+    is_open_rel(g,("T0",))
+  File "main.py", line 64, in is_open_rel
+    iso = is_isomorphic_to_any(current, S, base_rels)
+  File "/home/pventura/relationaldef/minion.py", line 197, in is_isomorphic_to_any
+    iso = is_isomorphic(source,target,subtype)
+  File "/home/pventura/relationaldef/minion.py", line 180, in is_isomorphic
+    i = isomorphisms(source,target,subtype,allsols=False)
+  File "/home/pventura/relationaldef/minion.py", line 172, in isomorphisms
+    return MinionSol(result,allsols,fun=lambda iso:(Isomorphism({source.universe[k]:target.universe[iso[k]] for k in iso},source,target,subtype)))
+  File "/home/pventura/relationaldef/minion.py", line 42, in __init__
+    files.write(self.input_filename, input_data)
+  File "/home/pventura/relationaldef/files.py", line 66, in write
+    f = open(path, 'w')
+KeyboardInterrupt
+Exception ignored in: <bound method MinionSol.__del__ of <minion.MinionSol object at 0x2aaff9bdef60>>
+Traceback (most recent call last):
+  File "/home/pventura/relationaldef/minion.py", line 132, in __del__
+    if not self.EOF:
+AttributeError: 'MinionSol' object has no attribute 'EOF'
+
+ Performance counter stats for 'timeout --signal=SIGINT 30m python3 main.py':
+
+     617515.791247      task-clock (msec)         #    0.343 CPUs utilized          
+         6,314,715      context-switches          #    0.010 M/sec                  
+         1,349,601      cpu-migrations            #    0.002 M/sec                  
+       358,836,765      page-faults               #    0.581 M/sec                  
+ 3,912,080,133,223      cycles                    #    6.335 GHz                    
+ 3,249,234,663,465      instructions              #    0.83  insn per cycle         
+   674,004,728,975      branches                  # 1091.478 M/sec                  
+    15,819,189,254      branch-misses             #    2.35% of all branches        
+
+    1800.024449704 seconds time elapsed
+

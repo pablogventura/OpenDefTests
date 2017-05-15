@@ -1,0 +1,30 @@
+Exception ignored in: <bound method Popen.__del__ of <subprocess.Popen object at 0x2ba62d2b1208>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/subprocess.py", line 728, in __del__
+    self._internal_poll(_deadstate=_maxsize)
+  File "/usr/lib/python3.5/subprocess.py", line 1318, in _internal_poll
+    pid, sts = _waitpid(self.pid, _WNOHANG)
+KeyboardInterrupt: 
+Spectrum=[3, 2, 1]
+Diversity=3823
+1-diversity=2
+2-diversity=61
+3-diversity=3760
+#Auts=3856
+#Isos=11639
+1117737 calls to Minion
+DEFINABLE
+
+ Performance counter stats for 'timeout --signal=SIGINT 30m python3 main.py':
+
+     863953.589295      task-clock (msec)         #    0.416 CPUs utilized          
+         7,540,433      context-switches          #    0.009 M/sec                  
+         1,668,994      cpu-migrations            #    0.002 M/sec                  
+       438,618,358      page-faults               #    0.508 M/sec                  
+ 5,267,763,841,779      cycles                    #    6.097 GHz                    
+ 4,391,356,177,293      instructions              #    0.83  insn per cycle         
+   908,150,234,831      branches                  # 1051.156 M/sec                  
+    19,540,275,000      branch-misses             #    2.15% of all branches        
+
+    2075.687638297 seconds time elapsed
+

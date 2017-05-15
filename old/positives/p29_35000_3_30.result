@@ -1,0 +1,42 @@
+Spectrum=[3, 2, 1]
+Traceback (most recent call last):
+  File "main.py", line 96, in <module>
+    main()
+  File "main.py", line 15, in main
+    is_open_rel(g,("T0",))
+  File "main.py", line 64, in is_open_rel
+    iso = is_isomorphic_to_any(current, S, base_rels)
+  File "/home/pventura/relationaldef/minion.py", line 197, in is_isomorphic_to_any
+    iso = is_isomorphic(source,target,subtype)
+  File "/home/pventura/relationaldef/minion.py", line 180, in is_isomorphic
+    i = isomorphisms(source,target,subtype,allsols=False)
+  File "/home/pventura/relationaldef/minion.py", line 172, in isomorphisms
+    return MinionSol(result,allsols,fun=lambda iso:(Isomorphism({source.universe[k]:target.universe[iso[k]] for k in iso},source,target,subtype)))
+  File "/home/pventura/relationaldef/minion.py", line 41, in __init__
+    stdin=sp.PIPE, stdout=sp.PIPE, stderr=sp.PIPE)
+  File "/usr/lib/python3.5/subprocess.py", line 676, in __init__
+    restore_signals, start_new_session)
+  File "/usr/lib/python3.5/subprocess.py", line 1205, in _execute_child
+    executable = os.fsencode(executable)
+  File "/usr/lib/python3.5/os.py", line 857, in fsencode
+    if isinstance(filename, bytes):
+KeyboardInterrupt
+Exception ignored in: <bound method MinionSol.__del__ of <minion.MinionSol object at 0x2b4906accd30>>
+Traceback (most recent call last):
+  File "/home/pventura/relationaldef/minion.py", line 132, in __del__
+    if not self.EOF:
+AttributeError: 'MinionSol' object has no attribute 'EOF'
+
+ Performance counter stats for 'timeout --signal=SIGINT 30m python3 main.py':
+
+     744779.851342      task-clock (msec)         #    0.414 CPUs utilized          
+         6,579,817      context-switches          #    0.009 M/sec                  
+         1,452,327      cpu-migrations            #    0.002 M/sec                  
+       389,240,899      page-faults               #    0.523 M/sec                  
+ 4,569,144,651,754      cycles                    #    6.135 GHz                    
+ 3,889,479,556,223      instructions              #    0.85  insn per cycle         
+   803,358,960,644      branches                  # 1078.653 M/sec                  
+    17,081,025,431      branch-misses             #    2.13% of all branches        
+
+    1800.050971046 seconds time elapsed
+

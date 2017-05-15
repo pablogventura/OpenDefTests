@@ -1,0 +1,33 @@
+Spectrum = [2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    9->2
+  from:
+    RelationalModel(universe=[9],relations={'R0': set(), 'R1': set(), 'R3': set(), 'R2': {(9, 9)}, 'T0': {(9, 9)}})
+  to:
+    RelationalModel(universe=[2],relations={'R0': set(), 'R1': set(), 'R3': set(), 'R2': {(2, 2)}, 'T0': set()})
+  )
+
+
+State before abort: 
+  Diversity = 17
+    1-diversity = 8
+    2-diversity = 9
+  #Auts = 17
+  #Isos = 10
+  27 calls to Minion
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../main.py':
+
+        270.430547      task-clock (msec)         #    0.734 CPUs utilized          
+               166      context-switches          #    0.614 K/sec                  
+                33      cpu-migrations            #    0.122 K/sec                  
+            16,714      page-faults               #    0.062 M/sec                  
+       501,824,483      cycles                    #    1.856 GHz                    
+       877,776,839      instructions              #    1.75  insn per cycle         
+       192,143,091      branches                  #  710.508 M/sec                  
+         2,334,636      branch-misses             #    1.22% of all branches        
+
+       0.368297999 seconds time elapsed
+

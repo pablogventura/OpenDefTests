@@ -1,0 +1,38 @@
+Spectrum=[3, 2, 1]
+Traceback (most recent call last):
+  File "main.py", line 96, in <module>
+    main()
+  File "main.py", line 15, in main
+    is_open_rel(g,("T0",))
+  File "main.py", line 64, in is_open_rel
+    iso = is_isomorphic_to_any(current, S, base_rels)
+  File "/home/pventura/relationaldef/minion.py", line 197, in is_isomorphic_to_any
+    iso = is_isomorphic(source,target,subtype)
+  File "/home/pventura/relationaldef/minion.py", line 180, in is_isomorphic
+    i = isomorphisms(source,target,subtype,allsols=False)
+  File "/home/pventura/relationaldef/minion.py", line 172, in isomorphisms
+    return MinionSol(result,allsols,fun=lambda iso:(Isomorphism({source.universe[k]:target.universe[iso[k]] for k in iso},source,target,subtype)))
+  File "/home/pventura/relationaldef/minion.py", line 42, in __init__
+    files.write(self.input_filename, input_data)
+  File "/home/pventura/relationaldef/files.py", line 68, in write
+    f.close()
+KeyboardInterrupt
+Exception ignored in: <bound method MinionSol.__del__ of <minion.MinionSol object at 0x2b3ad9de0278>>
+Traceback (most recent call last):
+  File "/home/pventura/relationaldef/minion.py", line 132, in __del__
+    if not self.EOF:
+AttributeError: 'MinionSol' object has no attribute 'EOF'
+
+ Performance counter stats for 'timeout --signal=SIGINT 30m python3 main.py':
+
+     727954.089132      task-clock (msec)         #    0.404 CPUs utilized          
+         7,041,883      context-switches          #    0.010 M/sec                  
+         1,538,910      cpu-migrations            #    0.002 M/sec                  
+       400,663,726      page-faults               #    0.550 M/sec                  
+ 4,579,203,926,456      cycles                    #    6.291 GHz                    
+ 3,824,002,524,555      instructions              #    0.84  insn per cycle         
+   793,683,056,492      branches                  # 1090.293 M/sec                  
+    18,221,421,149      branch-misses             #    2.30% of all branches        
+
+    1800.033794987 seconds time elapsed
+

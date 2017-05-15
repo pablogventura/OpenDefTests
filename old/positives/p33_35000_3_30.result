@@ -1,0 +1,25 @@
+Spectrum=[3, 2, 1]
+Traceback (most recent call last):
+  File "main.py", line 96, in <module>
+    main()
+  File "main.py", line 15, in main
+    is_open_rel(g,("T0",))
+  File "main.py", line 64, in is_open_rel
+    iso = is_isomorphic_to_any(current, S, base_rels)
+  File "/home/pventura/relationaldef/minion.py", line 196, in is_isomorphic_to_any
+    for target in targets:
+KeyboardInterrupt
+
+ Performance counter stats for 'timeout --signal=SIGINT 30m python3 main.py':
+
+     736238.368510      task-clock (msec)         #    0.409 CPUs utilized          
+         6,342,325      context-switches          #    0.009 M/sec                  
+         1,376,061      cpu-migrations            #    0.002 M/sec                  
+       377,687,491      page-faults               #    0.513 M/sec                  
+ 4,585,730,435,669      cycles                    #    6.229 GHz                    
+ 3,779,466,259,440      instructions              #    0.82  insn per cycle         
+   781,377,027,965      branches                  # 1061.310 M/sec                  
+    16,905,798,247      branch-misses             #    2.16% of all branches        
+
+    1800.046732380 seconds time elapsed
+
