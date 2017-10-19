@@ -1,0 +1,33 @@
+Spectrum = [2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    29->19
+  from:
+    RelationalModel(universe=[29],relations={'R0': set(), 'R7': set(), 'R2': set(), 'T0': set(), 'R6': {(29, 29)}, 'R5': set(), 'R8': set(), 'R4': set(), 'R3': set(), 'R9': set(), 'R1': set()})
+  to:
+    RelationalModel(universe=[19],relations={'R0': set(), 'R7': set(), 'R2': set(), 'T0': {(19, 19)}, 'R6': {(19, 19)}, 'R5': set(), 'R8': set(), 'R4': set(), 'R3': set(), 'R9': set(), 'R1': set()})
+  )
+
+
+State before abort: 
+  Diversity = 51
+    1-diversity = 22
+    2-diversity = 29
+  #Auts = 0
+  #Isos = 8
+  59 calls to Minion
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
+
+        210.093242      task-clock (msec)         #    1.029 CPUs utilized          
+               272      context-switches          #    0.001 M/sec                  
+                42      cpu-migrations            #    0.200 K/sec                  
+            28,690      page-faults               #    0.137 M/sec                  
+       468,183,065      cycles                    #    2.228 GHz                    
+       601,941,539      instructions              #    1.29  insn per cycle         
+       129,242,354      branches                  #  615.167 M/sec                  
+         2,693,770      branch-misses             #    2.08% of all branches        
+
+       0.204165258 seconds time elapsed
+

@@ -1,0 +1,33 @@
+Spectrum = [2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    31->14
+  from:
+    RelationalModel(universe=[31],relations={'R2': {(31, 31)}, 'R8': {(31, 31)}, 'R7': {(31, 31)}, 'R3': {(31, 31)}, 'R6': set(), 'R5': {(31, 31)}, 'R9': {(31, 31)}, 'R0': set(), 'R4': {(31, 31)}, 'T0': set(), 'R1': set()})
+  to:
+    RelationalModel(universe=[14],relations={'R2': {(14, 14)}, 'R8': {(14, 14)}, 'R7': {(14, 14)}, 'R3': {(14, 14)}, 'R6': set(), 'R5': {(14, 14)}, 'R9': {(14, 14)}, 'R0': set(), 'R4': {(14, 14)}, 'T0': {(14, 14)}, 'R1': set()})
+  )
+
+
+State before abort: 
+  Diversity = 61
+    1-diversity = 30
+    2-diversity = 31
+  #Auts = 0
+  #Isos = 2
+  63 calls to Minion
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
+
+        310.055173      task-clock (msec)         #    1.031 CPUs utilized          
+               269      context-switches          #    0.868 K/sec                  
+                22      cpu-migrations            #    0.071 K/sec                  
+            34,864      page-faults               #    0.112 M/sec                  
+       690,001,850      cycles                    #    2.225 GHz                    
+     1,061,313,663      instructions              #    1.54  insn per cycle         
+       229,314,164      branches                  #  739.591 M/sec                  
+         3,450,937      branch-misses             #    1.50% of all branches        
+
+       0.300869324 seconds time elapsed
+

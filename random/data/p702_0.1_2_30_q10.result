@@ -1,0 +1,32 @@
+Spectrum = [2, 1]
+NOT DEFINABLE
+Counterexample:
+  Automorphism(
+    0->12
+    12->0
+  from:
+    RelationalModel(universe=[0, 12],relations={'R5': set(), 'R7': set(), 'T0': {(12, 12)}, 'R2': set(), 'R8': set(), 'R4': set(), 'R3': set(), 'R1': {(12, 12), (0, 0)}, 'R0': set(), 'R9': set(), 'R6': set()})
+  )
+
+
+State before abort: 
+  Diversity = 21
+    1-diversity = 10
+    2-diversity = 11
+  #Auts = 1
+  #Isos = 2
+  24 calls to Minion
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
+
+        100.747948      task-clock (msec)         #    1.007 CPUs utilized          
+               125      context-switches          #    0.001 M/sec                  
+                54      cpu-migrations            #    0.536 K/sec                  
+            12,595      page-faults               #    0.125 M/sec                  
+       238,091,979      cycles                    #    2.363 GHz                    
+       245,893,271      instructions              #    1.03  insn per cycle         
+        53,050,110      branches                  #  526.563 M/sec                  
+         1,694,120      branch-misses             #    3.19% of all branches        
+
+       0.100091689 seconds time elapsed
+
