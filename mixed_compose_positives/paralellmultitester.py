@@ -8,7 +8,7 @@ import datetime
 print (datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
 
 path = "data/"
-timeout = "45m"
+timeout = "90m"
 
 running = []
 waiting = []
@@ -28,7 +28,7 @@ for filein in sorted(glob.glob(path + "*.model"),key=num_order,reverse=True):
 
     fileout = filein[:-6]+".result"
     if not os.path.isfile(fileout) :
-        waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../main.py"],fileout))
+        waiting.append((filein,["perf_4.13", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../relationaldef/main.py"],fileout))
     else:
         print ("File %s already exists" % fileout)
 
