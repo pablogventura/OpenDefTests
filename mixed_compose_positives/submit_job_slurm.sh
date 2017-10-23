@@ -26,7 +26,7 @@
 ### En mendieta: <= 16
 ### En jupiterace: <= 6
 ### En zx81: <= 12
-#SBATCH --cpus-per-task=12
+#SBATCH --cpus-per-task=6
 
 ### Tiempo de ejecución. Formato dias-horas:minutos. Máximo: tres días.
 #SBATCH --time 3-00:00:00
