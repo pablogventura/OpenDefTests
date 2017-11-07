@@ -2,7 +2,7 @@ from first_order.formulas import variables, eq, RelSym, true, false
 import random
 
 arity = 3
-r=("R",2)
+r=("R",3)
 
 r=RelSym(*r)
 vs = variables(*range(arity))
@@ -27,3 +27,14 @@ while result:
 print(formula)
 
 
+## aca se hizo la formula, ahora hacemos el modelo
+
+from itertools import product
+from random import sample
+from first_order.formulas import variables, eq, RelSym, true, false
+
+arity = 3
+card = 5
+density = 0.1
+for t in sample(list(product(range(card),repeat=arity)),int(card**arity*density)):
+    print(t)
