@@ -47,10 +47,12 @@ def generate(card, barity,bdensity,tarity):
     return set(baserelation),targetrel
     
 
-def printmodel(card,barity,bdensity,tarity):
+def printmodel(card,barity,bdensity,tarity,definable=True):
     t=set()
     while len(t) == 0 or len(t) == card**tarity:
-        b,t=generate(card,barity,bdensity,tarity)    
+        b,t=generate(card,barity,bdensity,tarity)
+    if not definable:
+        t.pop()
     
     print (" ".join(str(j) for j in range(card)))
     print ("")
@@ -65,7 +67,7 @@ def printmodel(card,barity,bdensity,tarity):
     
     
     
-printmodel(50,3,0.1,3)
+printmodel(10,3,0.1,3, False)
     
     
     
