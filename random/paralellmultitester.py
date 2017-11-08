@@ -7,13 +7,13 @@ import datetime
 
 print (datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
 
-path = "data/"
+path = "dataternarios/"
 timeout = "45m"
 
 running = []
 waiting = []
 
-cores = 10
+cores = 2
 
 
 def num_order(f):

@@ -9,7 +9,7 @@ import sys
 
 
 
-path = "data/"
+path = "dataternarios/"
 
 data = defaultdict(lambda : defaultdict(lambda : SimpleNamespace(diversities=[],
                                                                   times=[],
