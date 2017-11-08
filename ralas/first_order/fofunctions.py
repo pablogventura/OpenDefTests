@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-from ..functions.functions import Function
+from .functions.functions import Function
 from itertools import product
 import functools
 

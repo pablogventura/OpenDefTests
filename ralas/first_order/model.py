@@ -3,13 +3,11 @@
 
 from itertools import product, chain
 
-from ..misc.misc import indent, powerset
-from ..functions.morphisms import Embedding, Homomorphism
-from ..functions.congruence import minorice, is_system, CongruenceSystem, Congruence, maxcon, mincon, sup_proj
-from ..first_order.fofunctions import FO_Relation, FO_Operation, FO_Relation_Product, FO_Operation_Product, FO_Constant
-from ..first_order.fotype import FO_Type
-from ..interfaces import minion
-from ..interfaces import latticedraw
+from .misc.misc import indent, powerset
+from .functions.morphisms import Embedding, Homomorphism
+
+from .fofunctions import FO_Relation, FO_Operation, FO_Relation_Product, FO_Operation_Product, FO_Constant
+from .fotype import FO_Type
 
 
 class FO_Model(object):
