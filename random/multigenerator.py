@@ -14,7 +14,7 @@ for density in [0.1,0.2,0.3,0.4,0.5]:
                 print("Generating %sp%s_%s_%s_%s_q%s.model" % (path,i,density,arity,universe,quantity))
                 os.system(s)
             else:
-                print ("File %s already exists" % fileout)
+                print ("File %s already exists" % ("%sp%s_%s_%s_%s_q%s.model" % (path,i,density,arity,universe,quantity)))
      
 print("GENERATION FINISHED")
 
