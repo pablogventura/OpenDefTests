@@ -6,7 +6,7 @@ tarity=5
 bdensity=0.005
 card=20
 
-permutaciones =list(permutations(range(barity),barity))
+permutaciones =list(permutations(range(barity),barity))[0:3]
 
 def permutar(t,p):
     result = {}
@@ -48,8 +48,8 @@ for i,t in enumerate(sample(tuplas, 10000)):#int(bdensity*card**barity))
 
 print (" ".join(str(j) for j in range(card)))
 print ("")
-print ("R0 %s %s" % (len(tuplas),barity))
-for t in tuplas:
+print ("R0 %s %s" % (len(ptuplas),barity))
+for t in ptuplas:
     print (" ".join(str(e) for e in t))
 print ("")
 print ("R1 1 5")
