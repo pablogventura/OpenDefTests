@@ -1,5 +1,7 @@
 from itertools import product, permutations
 from random import sample,choice
+#TODO: densidad de tuplas tomadas
+
 
 barity=5
 tarity=5
