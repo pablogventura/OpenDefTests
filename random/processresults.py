@@ -82,13 +82,15 @@ if errors:
 for density in [0.1,0.2,0.3,0.4,0.5]:
     print("    Density: %s" % density)
     for universe in range(20,40+1,10):
-        print("      Universe: %s" % universe)
-        print("        Definables: %.2f%%" % (data[density][universe].definable / data[density][universe].total *100))
-        print("        Not definables: %.2f%%" % (data[density][universe].not_definable / data[density][universe].total *100))
-        print("        Cancelled: %.2f%%" % (data[density][universe].cancelled / data[density][universe].total *100))
-        print("        Diversity: %s" % np.median(data[density][universe].diversities))
-        print("        Time: %s" % np.median(data[density][universe].times))
-
+        try:
+            print("      Universe: %s" % universe)
+            print("        Definables: %.2f%%" % (data[density][universe].definable / data[density][universe].total *100))
+            print("        Not definables: %.2f%%" % (data[density][universe].not_definable / data[density][universe].total *100))
+            print("        Cancelled: %.2f%%" % (data[density][universe].cancelled / data[density][universe].total *100))
+            print("        Diversity: %s" % np.median(data[density][universe].diversities))
+            print("        Time: %s" % np.median(data[density][universe].times))
+        except ZeroDivisionError:
+            continue
 
 
 print("PROCESSING FINISHED of %s files" % num_files)

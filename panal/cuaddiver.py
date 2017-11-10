@@ -5,8 +5,10 @@ barity=5
 tarity=5
 bdensity=0.005
 card=20
+diversidad = 6
 
-permutaciones =list(permutations(range(barity),barity))[0:3]
+permutaciones =list(permutations(range(barity),barity))
+permutaciones = sample(permutaciones, diversidad-2)
 
 def permutar(t,p):
     result = {}
