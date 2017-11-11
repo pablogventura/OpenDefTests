@@ -15,7 +15,7 @@ for diversity in range(2,80+1,5):
                     print("Generating %sp%s_%s_%s_%s_%s_q%s.model" % (path,i,barity,tarity,universe,diversity,density))
                     os.system(s)
                 else:
-                    print ("File %s already exists" % ("%sp%s_%s_%s_%s_q%s.model" % (path,i,barity,tarity,universe,diversity,density)))
+                    print ("File %s already exists" % ("%sp%s_%s_%s_%s_%s_q%s.model" % (path,i,barity,tarity,universe,diversity,density)))
      
 print("GENERATION FINISHED")
 

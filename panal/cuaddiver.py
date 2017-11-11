@@ -43,10 +43,14 @@ def generar(card,barity,diversidad,densidad,tarity):
             conjuntos.add(ct)
     #print (len(tuplas))
     #assert False
-    ptuplas = set()        
+    
+    ptuplas = set()
     for i,t in enumerate(sample(tuplas, int(len(tuplas)*density))):#int(bdensity*card**barity))
-        p = choice(permutaciones)
-        ptuplas = ptuplas.union(clausurar(t,p))
+        if permutaciones:
+            p = choice(permutaciones)
+            ptuplas = ptuplas.union(clausurar(t,p))
+        else:
+            ptuplas.add(t)
 
 
     print (" ".join(str(j) for j in range(card)))
