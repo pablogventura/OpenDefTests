@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/pventura/relationaldef/parser.py", line 44, in stdin_parser
+    assert input() == "", ("Relation must finish with empty line at #%s line"%linenumber) # relation MUST finish with empty line
+EOFError: EOF when reading a line
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "../../relationaldef/main.py", line 101, in <module>
+    main()
+  File "../../relationaldef/main.py", line 11, in main
+    model = stdin_parser()
+  File "/home/pventura/relationaldef/parser.py", line 48, in stdin_parser
+    raise ParserError(linenumber,"Unexpected EOF")
+parser.ParserError: (32004, 'Unexpected EOF')
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
+
+        223.292109      task-clock (msec)         #    0.867 CPUs utilized          
+                18      context-switches          #    0.081 K/sec                  
+                14      cpu-migrations            #    0.063 K/sec                  
+             2,846      page-faults               #    0.013 M/sec                  
+       372,050,609      cycles                    #    1.666 GHz                    
+       692,158,173      instructions              #    1.86  insn per cycle         
+       157,840,330      branches                  #  706.878 M/sec                  
+         1,434,008      branch-misses             #    0.91% of all branches        
+
+       0.257582938 seconds time elapsed
+
