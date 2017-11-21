@@ -8,21 +8,22 @@ def permutar(t,p):
         result[i] = t[j]
     return tuple(result[i] for i in range(len(t)))
 
-def clausurar(t,p):
+def clausurar(t,permutaciones):
     result = set([t])
     viejos = 0
     while viejos != len(result):
         viejos = len(result)
         tuplas = set()
         for tupla in result:
-            tuplas.add(permutar(tupla,p))
+            for p in permutaciones:
+                tuplas.add(permutar(tupla,p))
         result=result.union(tuplas)
         
     return result
 
-def generar(card,barity,diversidad,densidad,tarity):
+def generar(card,barity,diversidad,densidad,tarity,perm):
     permutaciones =list(permutations(range(barity),barity))
-    permutaciones = sample(permutaciones, diversidad-2)
+    permutaciones = list(set(frozenset(sample(permutaciones, perm)) for i in range(diversidad-2)))
 
 
 
@@ -75,6 +76,7 @@ if __name__ == "__main__":
     parser.add_option("-b", "--barity", dest="barity")
     parser.add_option("-u", "--universe", dest="universe")
     parser.add_option("--seed", dest="seed",default=None)
+    parser.add_option("--perm", dest="perm",default=1)
 
     (options, args) = parser.parse_args()
     
@@ -83,9 +85,10 @@ if __name__ == "__main__":
     barity = int(options.barity)
     universe = int(options.universe)
     diversity = int(options.diversity)
+    perm = int(options.perm)
     if options.seed:
         seed(int(options.seed))
-    generar(universe,barity,diversity,density,tarity)
+    generar(universe,barity,diversity,density,tarity,perm)
     
     
 barity=5
