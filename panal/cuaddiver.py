@@ -1,8 +1,5 @@
 from itertools import product, permutations
-from random import sample,choice
-#TODO: densidad de tuplas tomadas
-
-
+from random import sample,choice,seed
 
 
 def permutar(t,p):
@@ -87,7 +84,7 @@ if __name__ == "__main__":
     universe = int(options.universe)
     diversity = int(options.diversity)
     if options.seed:
-        random.seed(int(options.seed))
+        seed(int(options.seed))
     generar(universe,barity,diversity,density,tarity)
     
     
