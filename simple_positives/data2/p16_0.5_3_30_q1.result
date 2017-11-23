@@ -1,0 +1,36 @@
+Spectrum = [3, 2, 1]
+Traceback (most recent call last):
+  File "../../relationaldef/main.py", line 101, in <module>
+    main()
+  File "../../relationaldef/main.py", line 16, in main
+    is_open_rel(model,targets_rel)
+  File "../../relationaldef/main.py", line 65, in is_open_rel
+    for aut in automorphisms(current,base_rels):
+  File "/home/pventura/relationaldef/minion.py", line 86, in __iter__
+    solution = self.__parse_solution()
+  File "/home/pventura/relationaldef/minion.py", line 77, in __parse_solution
+    raise ValueError("Minion Error:\n%s" % str_err)
+ValueError: Minion Error:
+Sorry, there has been some kind of error.
+This could be caused by a misformed input file, or by an internal bug.
+If you can't figure out what is causing the problem, please report it at http://www.sourceforge.net/projects/minion.
+Either on the bug tracker, or on the mailing list.
+
+The generated error message was: calloc failed - Memory exhausted! Aborting.
+The error was in the file /home/hudson/workspace/minion-release-linux/source/minion-1.8/minion/build_constraints/../memory_management/MemoryBlock.h on line 184
+Minion exited abnormally via an exception.
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
+
+        315.830433      task-clock (msec)         #    0.893 CPUs utilized          
+                10      context-switches          #    0.032 K/sec                  
+                 3      cpu-migrations            #    0.009 K/sec                  
+             4,472      page-faults               #    0.014 M/sec                  
+       485,872,680      cycles                    #    1.538 GHz                    
+     1,059,056,149      instructions              #    2.18  insn per cycle         
+       227,280,546      branches                  #  719.628 M/sec                  
+         1,945,655      branch-misses             #    0.86% of all branches        
+
+       0.353727298 seconds time elapsed
+

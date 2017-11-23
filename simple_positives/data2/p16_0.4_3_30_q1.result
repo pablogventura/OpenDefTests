@@ -1,0 +1,40 @@
+Spectrum = [3, 2, 1]
+Traceback (most recent call last):
+  File "../../relationaldef/main.py", line 101, in <module>
+    main()
+  File "../../relationaldef/main.py", line 16, in main
+    is_open_rel(model,targets_rel)
+  File "../../relationaldef/main.py", line 59, in is_open_rel
+    iso = is_isomorphic_to_any(current, S, base_rels)
+  File "/home/pventura/relationaldef/minion.py", line 274, in is_isomorphic_to_any
+    iso = is_isomorphic(source,target,subtype)
+  File "/home/pventura/relationaldef/minion.py", line 259, in is_isomorphic
+    if i:
+  File "/home/pventura/relationaldef/minion.py", line 106, in __bool__
+    solution = self.__parse_solution()
+  File "/home/pventura/relationaldef/minion.py", line 77, in __parse_solution
+    raise ValueError("Minion Error:\n%s" % str_err)
+ValueError: Minion Error:
+Sorry, there has been some kind of error.
+This could be caused by a misformed input file, or by an internal bug.
+If you can't figure out what is causing the problem, please report it at http://www.sourceforge.net/projects/minion.
+Either on the bug tracker, or on the mailing list.
+
+The generated error message was: calloc failed - Memory exhausted! Aborting.
+The error was in the file /home/hudson/workspace/minion-release-linux/source/minion-1.8/minion/build_constraints/../memory_management/MemoryBlock.h on line 184
+Minion exited abnormally via an exception.
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
+
+      42846.747349      task-clock (msec)         #    0.761 CPUs utilized          
+           128,503      context-switches          #    0.003 M/sec                  
+            51,453      cpu-migrations            #    0.001 M/sec                  
+        10,180,321      page-faults               #    0.238 M/sec                  
+   110,523,425,949      cycles                    #    2.580 GHz                    
+   107,235,595,115      instructions              #    0.97  insn per cycle         
+    22,349,006,540      branches                  #  521.603 M/sec                  
+       476,548,550      branch-misses             #    2.13% of all branches        
+
+      56.299148850 seconds time elapsed
+
