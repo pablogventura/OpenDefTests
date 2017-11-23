@@ -14,7 +14,7 @@ def positive_generator(cardinality,rels):
         r=set()
         srel=("%s %s %s\n" % (rindex,tuples,arity))
         while tuples != len(r):
-            t=tuple((random.randint(0,cardinality-1) for i in range(arity)))
+            t=tuple(random.sample(range(0,cardinality-1),arity))
             if t not in r:
                 srel+=" ".join(str(i) for i in t) + "\n"
                 r.add(t)
