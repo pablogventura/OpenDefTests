@@ -8,7 +8,7 @@ import datetime
 print (datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
 
 path = "data2/"
-timeout = "45m"
+timeout = "90m"
 
 running = []
 waiting = []
