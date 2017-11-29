@@ -1,40 +1,25 @@
 Spectrum = [3, 2, 1]
-Traceback (most recent call last):
-  File "../../relationaldef/main.py", line 101, in <module>
-    main()
-  File "../../relationaldef/main.py", line 16, in main
-    is_open_rel(model,targets_rel)
-  File "../../relationaldef/main.py", line 59, in is_open_rel
-    iso = is_isomorphic_to_any(current, S, base_rels)
-  File "/home/pventura/relationaldef/minion.py", line 274, in is_isomorphic_to_any
-    iso = is_isomorphic(source,target,subtype)
-  File "/home/pventura/relationaldef/minion.py", line 259, in is_isomorphic
-    if i:
-  File "/home/pventura/relationaldef/minion.py", line 106, in __bool__
-    solution = self.__parse_solution()
-  File "/home/pventura/relationaldef/minion.py", line 77, in __parse_solution
-    raise ValueError("Minion Error:\n%s" % str_err)
-ValueError: Minion Error:
-Sorry, there has been some kind of error.
-This could be caused by a misformed input file, or by an internal bug.
-If you can't figure out what is causing the problem, please report it at http://www.sourceforge.net/projects/minion.
-Either on the bug tracker, or on the mailing list.
+DEFINABLE
 
-The generated error message was: calloc failed - Memory exhausted! Aborting.
-The error was in the file /home/hudson/workspace/minion-release-linux/source/minion-1.8/minion/build_constraints/../memory_management/MemoryBlock.h on line 184
-Minion exited abnormally via an exception.
-
+Final state: 
+  Diversity = 4135
+    1-diversity = 2
+    2-diversity = 94
+    3-diversity = 4039
+  #Auts = 16
+  #Isos = 390
+  955602 calls to Minion
 
  Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../relationaldef/main.py':
 
-    1528581.477435      task-clock (msec)         #    0.842 CPUs utilized          
-         3,543,731      context-switches          #    0.002 M/sec                  
-         1,404,348      cpu-migrations            #    0.919 K/sec                  
-       240,733,621      page-faults               #    0.157 M/sec                  
- 3,947,459,503,295      cycles                    #    2.582 GHz                    
- 2,563,019,426,265      instructions              #    0.65  insn per cycle         
-   522,887,103,680      branches                  #  342.073 M/sec                  
-    12,203,757,219      branch-misses             #    2.33% of all branches        
+    2526539.756500      task-clock (msec)         #    1.064 CPUs utilized          
+         4,790,239      context-switches          #    0.002 M/sec                  
+         2,041,645      cpu-migrations            #    0.808 K/sec                  
+       329,613,428      page-faults               #    0.130 M/sec                  
+ 6,512,207,813,796      cycles                    #    2.578 GHz                    
+ 3,679,833,550,416      instructions              #    0.57  insn per cycle         
+   751,286,937,002      branches                  #  297.358 M/sec                  
+    18,376,682,478      branch-misses             #    2.45% of all branches        
 
-    1815.365836152 seconds time elapsed
+    2373.533382011 seconds time elapsed
 
