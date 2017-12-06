@@ -31,7 +31,7 @@ def generar(card,barity,diversidad,densidad,tarity,perm):
     permutaciones =list(permutations(range(barity),barity))
     for c in range(1,len(permutaciones)):
         for conjunto in permutations(permutaciones,c):
-            grupo= clausurar((0,1,2,3,4),conjunto)
+            grupo= clausurar((0,1,2),conjunto)
             if grupo not in grupos:
                 grupos.append(grupo)
                 #print(len(grupos))
@@ -40,7 +40,7 @@ def generar(card,barity,diversidad,densidad,tarity,perm):
         if len(grupos) == 156:
                     break
     grupos = sorted(grupos,key=len,reverse=True)
-    grupos = grupos[:3]
+    grupos = grupos[:0]
     #permutaciones = list(set(frozenset(sample(permutaciones, perm)) for i in range(diversidad-2)))
     #print (len(permutaciones))
 
@@ -64,22 +64,27 @@ def generar(card,barity,diversidad,densidad,tarity,perm):
     #print(int(len(tuplas)*density),len(tuplas))
     #assert False
     for i,t in enumerate(sample(tuplas, int(len(tuplas)*density))):#int(bdensity*card**barity))
-        p = choice(grupos)
-        ptuplas = ptuplas.union(nuevaclausura(t,p))
+        if grupos:
+            p = choice(grupos)
+            ptuplas = ptuplas.union(nuevaclausura(t,p))
+        else:
+            ptuplas.add(t)
 
 
     print (" ".join(str(j) for j in range(card)))
     print ("")
-    print ("R0 %s %s" % (len(ptuplas),barity))
+    print ("R0 %s %s" % (len(ptuplas)+2,barity+2))
+    print (" ".join(str(j) for j in (0,1,2,3,4)))
+    print (" ".join(str(j) for j in (0,1,2,3,3)))
     for t in ptuplas:
-        print (" ".join(str(e) for e in t))
+        print (" ".join(str(e) for e in (t+(t[2],t[2]))))
     print ("")
-    print ("R1 1 %s" % tarity)
-    print (" ".join(str(j) for j in range(tarity)))
-    print("")
 
-    print ("T0 1 %s" % tarity)
-    print (" ".join(str(j) for j in range(tarity)))
+    print ("T0 %s %s" % (len(ptuplas)+2,tarity))
+    print (" ".join(str(j) for j in (0,1,2,3,4)))
+    print (" ".join(str(j) for j in (0,1,2,3,3)))
+    for t in ptuplas:
+        print (" ".join(str(e) for e in (t+(t[2],t[2]))))
     print("")
 
 
