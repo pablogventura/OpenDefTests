@@ -84,7 +84,7 @@ for quantity in [1]:
     print("  Quantity: %s" % quantity)
     for density in [0.1,0.2,0.3,0.4,0.5]:
         print("    Density: %s" % density)
-        for universe in range(20,40+1,10):
+        for universe in range(20,30+1,5):
             print("      Universe: %s" % universe)
             print("        Definables: %.2f%%" % (data[density][arity][universe][quantity].definable / data[density][arity][universe][quantity].total *100))
             print("        Not definables: %.2f%%" % (data[density][arity][universe][quantity].not_definable / data[density][arity][universe][quantity].total *100))
@@ -97,7 +97,7 @@ for quantity in [1]:
     print("  Quantity: %s" % quantity)
     for density in [0.1,0.2,0.3,0.4,0.5]:
         print("    Density: %s" % density)
-        for universe in range(20,40+1,10):
+        for universe in range(20,30+1,5):
             print("      Universe: %s" % universe)
             print("        Definables: %.2f%%" % (data[density][arity][universe][quantity].definable / data[density][arity][universe][quantity].total *100))
             print("        Not definables: %.2f%%" % (data[density][arity][universe][quantity].not_definable / data[density][arity][universe][quantity].total *100))
@@ -124,7 +124,7 @@ for y_axis in ["time","diversity"]:
         marker=0
         max_y=-float("inf")
         min_y=float("inf")
-        for universe in range(20,40+1,10):
+        for universe in range(20,30+1,5):
             x=[]
             y=[]
             for density in [0.1,0.2,0.3,0.4,0.5]:
@@ -169,7 +169,7 @@ for y_axis in ["time","diversity"]:
         marker=0
         max_y=-float("inf")
         min_y=float("inf")
-        for universe in range(20,40+1,10):
+        for universe in range(20,30+1,5):
             x=[]
             y=[]
             for density in [0.1,0.2,0.3,0.4,0.5]:
