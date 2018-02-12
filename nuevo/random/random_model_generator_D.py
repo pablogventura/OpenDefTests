@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
+"""
+Genera un modelo con quantity relaciones base de aridad 2 y densidad density
+con una relacion target de aridad arity de densidad 1.
+"""
 
+
+from itertools import product
 import random
 
-def positive_generator(cardinality,rels):
+def positive_generator(cardinality,rels,tarity):
     """
     Target is the last relation repeated.
     """
@@ -20,7 +26,10 @@ def positive_generator(cardinality,rels):
                 r.add(t)
         print("R"+srel)
         rindex+=1
-    print("T0"+srel[len(srel.split()[0]):])
+    srel=(" %s %s\n" % (cardinality**tarity,tarity))
+    for t in product(range(cardinality),repeat=tarity):
+        srel+=" ".join(str(i) for i in t) + "\n"
+    print("T0"+srel)
 
 
 if __name__ == "__main__":
@@ -41,5 +50,5 @@ if __name__ == "__main__":
     if options.seed:
         random.seed(int(options.seed))
 
-    positive_generator(universe,[(int((universe**arity)*density),arity)]*quantity)
+    positive_generator(universe,[(int((universe**2)*density),2)]*quantity,arity)
         
