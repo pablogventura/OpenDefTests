@@ -21,6 +21,9 @@ cores = 5
 
 
 def num_order(f):
+    f=f.replace("d","")
+    f=f.replace("a","")
+    f=f.replace("u","")
     f=f.replace("q","")
     f=f.split("/p")[1]
     f=f[:-len(".model")]
