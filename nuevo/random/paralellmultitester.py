@@ -29,6 +29,7 @@ def num_order(f):
     f=f.split("/p")[1]
     f=f[:-len(".model")]
     f= f.split("_")
+    f=f[:-1]
     try:
         f=list(map(float,f))
     except:
