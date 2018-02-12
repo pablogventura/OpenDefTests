@@ -28,7 +28,11 @@ def num_order(f):
     f=f.split("/p")[1]
     f=f[:-len(".model")]
     f= f.split("_")
-    f=list(map(float,f))
+    try:
+        f=list(map(float,f))
+    except:
+        print(f)
+        assert False
     return f
 
 for filein in sorted(glob.glob(path + "*.model"),key=num_order,reverse=True):
