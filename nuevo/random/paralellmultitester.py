@@ -21,6 +21,7 @@ cores = 5
 
 
 def num_order(f):
+    print(f)
     f=f.replace("d","")
     f=f.replace("a","")
     f=f.replace("u","")
