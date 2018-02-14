@@ -50,5 +50,5 @@ if __name__ == "__main__":
     if options.seed:
         random.seed(int(options.seed))
 
-    generator(universe,[(int((universe**arity)*density),arity)]*quantity,[(int((universe**arity)*density),arity)])
+    generator(universe,[(int((universe**2)*density),2)]*quantity,[(int((universe**arity)*density),arity)])
         
