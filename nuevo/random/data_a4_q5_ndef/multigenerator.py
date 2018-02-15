@@ -6,7 +6,7 @@ arity=4
 quantity=5
 try:
     for density in [0.1,0.2,0.3,0.4,0.5]:
-        for universe in range(50,100+1,1):
+        for universe in range(50,100+1,10):
             for i in range(100):
                 if not os.path.isfile("%sp%s_d%s_a%s_u%s_q%s.model" % (path,i,density,arity,universe,quantity)) :
                     s = "python3 ../random_model_generator_ND.py"
