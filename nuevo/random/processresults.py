@@ -55,7 +55,7 @@ for f in glob.glob(path + "*.result"):
     ff=ff.replace("u","")
     ff=ff.replace("q","")
     i,density,arity,universe,quantity = ff.split("_")
-    i=int(i)
+    #i=int(i)
     quantity=int(quantity)
     arity=int(arity)
     density=float(density)
