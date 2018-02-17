@@ -5,9 +5,9 @@ path="./"
 arity=2
 quantity=10
 try:
-    for density in [0.1,0.2,0.3,0.4,0.5]:
-        for universe in range(20,30+1,5):
-            for i in range(100):
+    for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:#logaritmica
+        for universe in range(50,70+1,10):
+            for i in range(500):
                 if not os.path.isfile("%sp%s_d%s_a%s_u%s_q%s.model" % (path,i,density,arity,universe,quantity)) :
                     s = "python3 ../random_model_generator_D.py"
                     s += " -d%s -a%s -u%s -q%s > %s" % (density,arity,universe,quantity,path)
