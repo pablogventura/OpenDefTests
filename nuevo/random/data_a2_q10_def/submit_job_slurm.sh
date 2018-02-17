@@ -14,7 +14,7 @@
 #SBATCH --partition=batch
 
 ### Nombre de la tarea
-#SBATCH --job-name=gen_a2_q1
+#SBATCH --job-name=gen_a2_q10
 
 ### Cantidad de nodos a usar
 #SBATCH --nodes=1
