@@ -2,7 +2,7 @@ import os
 
 path="./"
 
-arity=2
+arity=3
 quantity=10
 try:
     for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:

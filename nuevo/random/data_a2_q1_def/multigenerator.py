@@ -3,7 +3,7 @@ import os
 path="./"
 
 arity=2
-quantity=10
+quantity=1
 try:
     for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
         for universe in range(50,70+1,10):
