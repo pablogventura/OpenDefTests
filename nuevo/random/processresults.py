@@ -90,9 +90,9 @@ if errors:
     sys.exit(1)
     
 
-for density in [0.1,0.2,0.3,0.4,0.5]:
+for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
     print("    Density: %s" % density)
-    for universe in range(20,30+1,5):
+    for universe in range(50,70+1,10):
         try:
             print("      Universe: %s" % universe)
             print("        Definables: %.2f%%" % (data[density][universe].definable / data[density][universe].total *100))
@@ -120,10 +120,10 @@ for y_axis in ["time","diversity","definability"]:
     marker=0
     max_y=-float("inf")
     min_y=float("inf")
-    for universe in range(20,30+1,5):
+    for universe in range(50,70+1,10):
         x=[]
         y=[]
-        for density in [0.1,0.2,0.3,0.4,0.5]:
+        for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
             #print("        Diversity: %s" % np.median(data[density][universe].diversities))
             x.append(density)
             if y_axis == "time":
