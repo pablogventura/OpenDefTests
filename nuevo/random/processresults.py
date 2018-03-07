@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import sys
 
 
-
+timeouts=0
 
 try:
     path = sys.argv[1] + "/"
@@ -71,6 +71,7 @@ for f in glob.glob(path + "*.result"):
         data[density][universe].not_definable+=1
     elif state == "C":
         data[density][universe].cancelled+=1
+        timeouts+=1
     else:
         errors.append(f)
         continue
@@ -169,6 +170,10 @@ for y_axis in ["time","diversity","definability"]:
 
     plt.savefig("random_tests_%s_%s.pdf"%(y_axis,s_conf.replace("/","to")))
     plt.clf()
+
+
+print("%s timeouts" % timeouts)
+
 
 import sys
 sys.exit(0)
