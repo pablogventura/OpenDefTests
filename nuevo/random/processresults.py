@@ -1,3 +1,4 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import namedtuple, defaultdict
@@ -138,6 +139,11 @@ for y_axis in ["time","diversity","definability"]:
             min_y=min(y+[min_y])
         #dict_keys([' ', 'None', '', '-.', ':', '-', '--'])
         ax.plot(x, y, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle="-",label="#Universe=%s"%universe)
+        #ax.loglog(x, y, basex=2)
+        ax.set_xscale('log')
+        ax.set_xticks(x)
+        ax.set_xlim([0.5/2**4.2,0.5/2**-0.2])
+        ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
         marker+=1
 
     handles, labels = ax.get_legend_handles_labels()
@@ -147,7 +153,7 @@ for y_axis in ["time","diversity","definability"]:
     s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
     fig.suptitle('Random tests, configuration=%s' % (s_conf), fontsize=14, fontweight='bold')
     ax.set_xlabel('Density')
-    ax.set_xlim([0.05,0.55])
+
     if min_y == max_y:
        max_y=min_y+1 
     y_margin=(max_y-min_y)/6
@@ -160,7 +166,7 @@ for y_axis in ["time","diversity","definability"]:
         ax.set_ylabel('Definability')
     else:
         raise IndexError
-    #plt.yscale('log')
+
     plt.savefig("random_tests_%s_%s.pdf"%(y_axis,s_conf.replace("/","to")))
     plt.clf()
 
