@@ -1,0 +1,24 @@
+import os
+
+path="./"
+
+arity=3
+quantity=1
+try:
+    for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
+        for universe in range(40,40+1,10):
+            for i in range(300):
+                if not os.path.isfile("%sp%s_d%s_a%s_u%s_q%s.model" % (path,i,density,arity,universe,quantity)) :
+                    s = "python3 ../random_model_generator_D.py"
+                    s += " -d%s -a%s -u%s -q%s -b%s > %s" % (density,arity,universe,quantity,arity,path)
+                    s += "p%s_d%s_a%s_u%s_q%s.model" % (i,density,arity,universe,quantity)
+                    print("Generating %sp%s_d%s_a%s_u%s_q%s.model" % (path,i,density,arity,universe,quantity))
+                    os.system(s)
+                else:
+                    print ("File %s already exists" % ("%sp%s_d%s_a%s_u%s_q%s.model" % (path,i,density,arity,universe,quantity)))
+     
+    print("GENERATION FINISHED")
+    
+except:
+    print("GENERATION FAILED")
+
