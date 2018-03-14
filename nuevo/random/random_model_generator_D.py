@@ -39,6 +39,7 @@ if __name__ == "__main__":
     parser.add_option("-a", "--arity", dest="arity")
     parser.add_option("-u", "--universe", dest="universe")
     parser.add_option("-q", "--quantity", dest="quantity", default = 1)
+    parser.add_option("-b", "--abase", dest="abase", default = 2)
     parser.add_option("--seed", dest="seed",default=None)
 
     (options, args) = parser.parse_args()
@@ -47,8 +48,9 @@ if __name__ == "__main__":
     arity = int(options.arity)
     universe = int(options.universe)
     quantity = int(options.quantity)
+    abase = int(options.abase)
     if options.seed:
         random.seed(int(options.seed))
 
-    positive_generator(universe,[(int((universe**2)*density),2)]*quantity,arity)
+    positive_generator(universe,[(int((universe**abase)*density),abase)]*quantity,arity)
         
