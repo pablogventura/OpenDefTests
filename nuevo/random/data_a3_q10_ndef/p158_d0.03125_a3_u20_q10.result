@@ -1,0 +1,48 @@
+R0 density: 0.030000
+R1 density: 0.030000
+R2 density: 0.030000
+R3 density: 0.030000
+R4 density: 0.030000
+R5 density: 0.030000
+R6 density: 0.030000
+R7 density: 0.030000
+R8 density: 0.030000
+R9 density: 0.030000
+T0 density: 0.500000
+Spectrum = [3, 2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    0->1
+    2->0
+  from:
+    RelationalModel(universe=[0, 2],relations={'R0|1|0|': set(), 'R1|1|0|': set(), 'R1|0-1|': set(), 'R2|1|0|': {(2, 0)}, 'R3|1|0|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': set(), 'R7|0-1|': set(), 'R7|1|0|': set(), 'R8|1|0|': set(), 'R9|1|0|': set(), 'T0|0-1|2|': {(2, 0)}, 'T0|2|1|0|': set(), 'T0|0-2|1|': {(2, 0), (0, 2)}, 'T0|1-2|0|': set(), 'T0|0-1-2|': {(2,), (0,)}})
+  to:
+    RelationalModel(universe=[0, 1],relations={'R0|1|0|': set(), 'R1|1|0|': set(), 'R1|0-1|': set(), 'R2|1|0|': {(0, 1)}, 'R3|1|0|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': set(), 'R7|0-1|': set(), 'R7|1|0|': set(), 'R8|1|0|': set(), 'R9|1|0|': set(), 'T0|0-1|2|': set(), 'T0|2|1|0|': set(), 'T0|0-2|1|': {(1, 0)}, 'T0|1-2|0|': {(0, 1)}, 'T0|0-1-2|': {(0,), (1,)}})
+  )
+
+
+State before abort: 
+  Diversity = 3
+    1-diversity = 1
+    2-diversity = 1
+    3-diversity = 1
+  #Auts = 0
+  #Isos = 2
+  5 calls to Minion
+  Minion total time = 0.004436 secs
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../../relationaldef/main.py':
+
+        176.392729      task-clock (msec)         #    1.003 CPUs utilized          
+                25      context-switches          #    0.142 K/sec                  
+                 3      cpu-migrations            #    0.017 K/sec                  
+             5,383      page-faults               #    0.031 M/sec                  
+       461,885,924      cycles                    #    2.619 GHz                    
+       696,117,894      instructions              #    1.51  insn per cycle         
+       150,787,237      branches                  #  854.838 M/sec                  
+         1,749,944      branch-misses             #    1.16% of all branches        
+
+       0.175877831 seconds time elapsed
+

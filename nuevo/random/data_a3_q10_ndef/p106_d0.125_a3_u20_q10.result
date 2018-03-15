@@ -1,0 +1,46 @@
+R0 density: 0.125000
+R1 density: 0.125000
+R2 density: 0.125000
+R3 density: 0.125000
+R4 density: 0.125000
+R5 density: 0.125000
+R6 density: 0.125000
+R7 density: 0.125000
+R8 density: 0.125000
+R9 density: 0.125000
+T0 density: 0.500000
+Spectrum = [3, 2, 1]
+NOT DEFINABLE
+Counterexample:
+  Automorphism(
+    3->17
+    17->3
+  from:
+    RelationalModel(universe=[3, 17],relations={'R0|1|0|': set(), 'R0|0-1|': set(), 'R1|0-1|': set(), 'R1|1|0|': set(), 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': set(), 'R7|1|0|': set(), 'R7|0-1|': set(), 'R8|1|0|': set(), 'R8|0-1|': set(), 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|0-1|2|': {(17, 3)}, 'T0|1-2|0|': {(17, 3)}, 'T0|0-2|1|': {(17, 3)}, 'T0|0-1-2|': {(3,), (17,)}})
+  )
+
+
+State before abort: 
+  Diversity = 132
+    1-diversity = 16
+    2-diversity = 67
+    3-diversity = 49
+  #Auts = 1
+  #Isos = 4
+  138 calls to Minion
+  Minion total time = 0.130063 secs
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../../relationaldef/main.py':
+
+        573.462545      task-clock (msec)         #    1.022 CPUs utilized          
+               628      context-switches          #    0.001 M/sec                  
+                86      cpu-migrations            #    0.150 K/sec                  
+            80,320      page-faults               #    0.140 M/sec                  
+     1,449,241,205      cycles                    #    2.527 GHz                    
+     1,819,203,916      instructions              #    1.26  insn per cycle         
+       391,673,544      branches                  #  682.998 M/sec                  
+         6,050,199      branch-misses             #    1.54% of all branches        
+
+       0.561190426 seconds time elapsed
+

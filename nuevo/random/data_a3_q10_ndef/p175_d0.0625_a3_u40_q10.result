@@ -1,0 +1,48 @@
+R0 density: 0.062500
+R1 density: 0.062500
+R2 density: 0.062500
+R3 density: 0.062500
+R4 density: 0.062500
+R5 density: 0.062500
+R6 density: 0.062500
+R7 density: 0.062500
+R8 density: 0.062500
+R9 density: 0.062500
+T0 density: 0.500000
+Spectrum = [3, 2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    1->1
+    14->12
+  from:
+    RelationalModel(universe=[1, 14],relations={'R0|1|0|': set(), 'R0|0-1|': set(), 'R1|1|0|': set(), 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': set(), 'R7|1|0|': set(), 'R7|0-1|': {(1,)}, 'R8|1|0|': set(), 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|0-1|2|': {(14, 1), (1, 14)}, 'T0|1-2|0|': {(14, 1)}, 'T0|0-2|1|': {(14, 1), (1, 14)}, 'T0|0-1-2|': {(1,)}})
+  to:
+    RelationalModel(universe=[1, 12],relations={'R0|1|0|': set(), 'R0|0-1|': set(), 'R1|1|0|': set(), 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': set(), 'R7|1|0|': set(), 'R7|0-1|': {(1,)}, 'R8|1|0|': set(), 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|0-1|2|': {(12, 1), (1, 12)}, 'T0|1-2|0|': {(1, 12)}, 'T0|0-2|1|': {(12, 1)}, 'T0|0-1-2|': {(1,)}})
+  )
+
+
+State before abort: 
+  Diversity = 45
+    1-diversity = 6
+    2-diversity = 26
+    3-diversity = 13
+  #Auts = 0
+  #Isos = 10
+  55 calls to Minion
+  Minion total time = 0.056831 secs
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../../relationaldef/main.py':
+
+       1256.151579      task-clock (msec)         #    1.005 CPUs utilized          
+               252      context-switches          #    0.201 K/sec                  
+                46      cpu-migrations            #    0.037 K/sec                  
+            38,482      page-faults               #    0.031 M/sec                  
+     3,262,123,331      cycles                    #    2.597 GHz                    
+     5,294,233,494      instructions              #    1.62  insn per cycle         
+     1,146,293,626      branches                  #  912.544 M/sec                  
+         7,265,921      branch-misses             #    0.63% of all branches        
+
+       1.249314323 seconds time elapsed
+

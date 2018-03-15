@@ -1,0 +1,48 @@
+R0 density: 0.125000
+R1 density: 0.125000
+R2 density: 0.125000
+R3 density: 0.125000
+R4 density: 0.125000
+R5 density: 0.125000
+R6 density: 0.125000
+R7 density: 0.125000
+R8 density: 0.125000
+R9 density: 0.125000
+T0 density: 0.500000
+Spectrum = [3, 2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    10->10
+    19->8
+  from:
+    RelationalModel(universe=[10, 19],relations={'R0|1|0|': {(19, 10)}, 'R0|0-1|': set(), 'R1|1|0|': set(), 'R1|0-1|': set(), 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': {(10,)}, 'R7|1|0|': set(), 'R7|0-1|': set(), 'R8|1|0|': set(), 'R8|0-1|': set(), 'R9|0-1|': set(), 'R9|1|0|': set(), 'T0|2|1|0|': set(), 'T0|1-2|0|': set(), 'T0|0-1|2|': set(), 'T0|0-1-2|': {(10,), (19,)}, 'T0|0-2|1|': {(19, 10), (10, 19)}})
+  to:
+    RelationalModel(universe=[8, 10],relations={'R0|1|0|': {(8, 10)}, 'R0|0-1|': set(), 'R1|1|0|': set(), 'R1|0-1|': set(), 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': {(10,)}, 'R7|1|0|': set(), 'R7|0-1|': set(), 'R8|1|0|': set(), 'R8|0-1|': set(), 'R9|0-1|': set(), 'R9|1|0|': set(), 'T0|2|1|0|': set(), 'T0|1-2|0|': set(), 'T0|0-1|2|': {(10, 8)}, 'T0|0-1-2|': {(10,), (8,)}, 'T0|0-2|1|': {(10, 8), (8, 10)}})
+  )
+
+
+State before abort: 
+  Diversity = 305
+    1-diversity = 17
+    2-diversity = 153
+    3-diversity = 135
+  #Auts = 0
+  #Isos = 4
+  309 calls to Minion
+  Minion total time = 0.310469 secs
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../../relationaldef/main.py':
+
+       1201.309192      task-clock (msec)         #    1.007 CPUs utilized          
+             1,400      context-switches          #    0.001 M/sec                  
+               169      cpu-migrations            #    0.141 K/sec                  
+           202,670      page-faults               #    0.169 M/sec                  
+     2,979,228,733      cycles                    #    2.480 GHz                    
+     3,683,077,124      instructions              #    1.24  insn per cycle         
+       791,890,566      branches                  #  659.190 M/sec                  
+        12,358,216      branch-misses             #    1.56% of all branches        
+
+       1.193016582 seconds time elapsed
+
