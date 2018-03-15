@@ -16,9 +16,10 @@ except:
     print("ERROR: Falta directorio de testing")
     sys.exit(1)
 
-min_universo = input("Universo mas chico: ")
-max_universo = input("Universo mas grande: ")
-paso_universo = input("Paso universo: ")
+min_universo = int(input("Universo mas chico: "))
+max_universo = int(input("Universo mas grande: "))
+paso_universo = int(input("Paso universo: "))
+titulo =input("Nombre pdfs: ")
 
 data = defaultdict(lambda : defaultdict(lambda : SimpleNamespace(diversities=[],
                                                                   times=[],
@@ -171,8 +172,10 @@ for y_axis in ["time","diversity","definability"]:
         ax.set_ylabel('Definability')
     else:
         raise IndexError
-
-    plt.savefig("random_tests_%s_%s.pdf"%(y_axis,s_conf.replace("/","to")))
+    if titulo:
+        plt.savefig("random_tests_%s_%s_%s.pdf"%(y_axis,s_conf.replace("/","to"),titulo))
+    else:
+        plt.savefig("random_tests_%s_%s.pdf"%(y_axis,s_conf.replace("/","to")))
     plt.clf()
 
 
