@@ -171,6 +171,7 @@ for y_axis in ["time","diversity","definability"]:
                 y2.append(np.median(data[density][universe].minion_times))
             elif y_axis == "diversity":
                 y.append(np.median(data[density][universe].diversities))
+                y2.append(np.median(data[density][universe].auts))
             elif y_axis == "definability":
                 y.append(data[density][universe].definable / (data[density][universe].total-data[density][universe].cancelled) *100)
             else:
@@ -179,7 +180,7 @@ for y_axis in ["time","diversity","definability"]:
             min_y=min(y+[min_y])
         #dict_keys([' ', 'None', '', '-.', ':', '-', '--'])
         ax.plot(x, y, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle="-",label="#Universe=%s"%universe)
-        if y_axis == "time":
+        if y_axis == "time" or y_axis == "diversity":
             ax.plot(x, y2, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle=":",label="#Universe=%s"%universe)
         #ax.loglog(x, y, basex=2)
         ax.set_xscale('log')
