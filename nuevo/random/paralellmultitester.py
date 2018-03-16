@@ -11,6 +11,12 @@ try:
 except:
     print("ERROR: Falta directorio de testing")
     sys.exit(1)
+
+try:
+    sys.argv[2]
+    prepros = False
+except:
+    prepros = True
     
 timeout = "45m"
 
@@ -41,7 +47,10 @@ for filein in sorted(glob.glob(path + "*.model"),key=num_order,reverse=True):
 
     fileout = filein[:-6]+".result"
     if not os.path.isfile(fileout) :
-        waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../../relationaldef/main.py"],fileout))
+        if prepros:
+            waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../../relationaldef/main.py"],fileout))
+        else:
+            waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../../relationaldef/main.py"],fileout))
     else:
         print ("File %s already exists" % fileout)
 
