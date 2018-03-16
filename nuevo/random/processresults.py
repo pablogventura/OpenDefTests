@@ -26,7 +26,11 @@ data = defaultdict(lambda : defaultdict(lambda : SimpleNamespace(diversities=[],
                                                                   cancelled=0,
                                                                   definable=0,
                                                                   not_definable=0,
-                                                                  total=0)))
+                                                                  total=0,
+                                                                  auts=[],
+                                                                  isos=[],
+                                                                  minion_calls=[],
+                                                                  minion_times=[])))
                                                                                           
 errors=[]
 num_files=0
@@ -38,6 +42,12 @@ for f in glob.glob(path + "*.result"):
 
     s = file.readline()
     state = None
+    """
+      #Auts = 4
+      #Isos = 433
+      493 calls to Minion
+      Minion total time = 0.476039 secs
+    """
     while s:
         s=s.strip()
         if "Diversity = " in s:
@@ -51,6 +61,14 @@ for f in glob.glob(path + "*.result"):
                 state = "D"
         elif " seconds time elapsed" in s:
             time = float(s.split()[0])
+        elif "#Auts = " in s:
+            automorfismos = int(s.split()[-1])
+        elif "#Isos = " in s:
+            isomorfismos=int(s.split()[-1])
+        elif " calls to Minion" in s:
+            llamadasminion=int(s.split()[0])
+        elif "Minion total time = " in s:
+            tiempominion=float(s.split()[-2])
         s = file.readline()
     
     file.close()
@@ -89,6 +107,14 @@ for f in glob.glob(path + "*.result"):
     
     #time
     data[density][universe].times.append(time)
+    
+    data[density][universe].auts.append(automorfismos)
+
+    data[density][universe].isos.append(isomorfismos)
+
+    data[density][universe].minion_calls.append(llamadasminion)
+
+    data[density][universe].minion_times.append(tiempominion)
 
 if errors:
     print("PARSE ERROR in:")
@@ -107,6 +133,10 @@ for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
             print("        Cancelled: %.2f%%" % (data[density][universe].cancelled / data[density][universe].total *100))
             print("        Diversity: %s" % np.median(data[density][universe].diversities))
             print("        Time: %s" % np.median(data[density][universe].times))
+            print("        Auts: %s" % np.median(data[density][universe].auts))
+            print("        Isos: %s" % np.median(data[density][universe].isos))
+            print("        Minion calls: %s" % np.median(data[density][universe].minion_calls))
+            print("        Minion time: %s" % np.median(data[density][universe].minion_times))
         except ZeroDivisionError:
             continue
 
