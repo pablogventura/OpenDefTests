@@ -6,7 +6,7 @@ import os
 import glob, os
 from types import SimpleNamespace
 import sys
-
+import re
 
 timeouts=0
 
@@ -68,7 +68,9 @@ for f in glob.glob(path + "*.result"):
         elif " calls to Minion" in s:
             llamadasminion=int(s.split()[0])
         elif "Minion total time = " in s:
-            tiempominion=float(s.split()[-2])
+            tiempominion=re.findall("[-+]?\d*\.\d+|[-+]?\d*\,\d+|\d+", s)
+            assert len(tiempominion)==1
+            tiempominion=float(tiempominion[0])
         s = file.readline()
     
     file.close()
@@ -177,7 +179,8 @@ for y_axis in ["time","diversity","definability"]:
             min_y=min(y+[min_y])
         #dict_keys([' ', 'None', '', '-.', ':', '-', '--'])
         ax.plot(x, y, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle="-",label="#Universe=%s"%universe)
-        ax.plot(x, y2, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle=".",label="#Universe=%s"%universe)
+        if y_axis == "time":
+            ax.plot(x, y2, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle=":",label="#Universe=%s"%universe)
         #ax.loglog(x, y, basex=2)
         ax.set_xscale('log')
         ax.set_xticks(x)
