@@ -1,0 +1,47 @@
+R0 density: 0.500000
+R1 density: 0.500000
+R2 density: 0.500000
+R3 density: 0.500000
+R4 density: 0.500000
+R5 density: 0.500000
+R6 density: 0.500000
+R7 density: 0.500000
+R8 density: 0.500000
+R9 density: 0.500000
+T0 density: 0.500000
+Spectrum = [3, 2, 1]
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    21->6
+  from:
+    RelationalModel(universe=[21],relations={'R0|1|0|': set(), 'R0|0-1|': {(21,)}, 'R1|1|0|': set(), 'R1|0-1|': {(21,)}, 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|0-1|': {(21,)}, 'R3|1|0|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': {(21,)}, 'R6|1|0|': set(), 'R6|0-1|': {(21,)}, 'R7|1|0|': set(), 'R7|0-1|': {(21,)}, 'R8|1|0|': set(), 'R8|0-1|': {(21,)}, 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|0-1|2|': set(), 'T0|0-2|1|': set(), 'T0|1-2|0|': set(), 'T0|0-1-2|': set()})
+  to:
+    RelationalModel(universe=[6],relations={'R0|1|0|': set(), 'R0|0-1|': {(6,)}, 'R1|1|0|': set(), 'R1|0-1|': {(6,)}, 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|0-1|': {(6,)}, 'R3|1|0|': set(), 'R4|1|0|': set(), 'R4|0-1|': set(), 'R5|1|0|': set(), 'R5|0-1|': {(6,)}, 'R6|1|0|': set(), 'R6|0-1|': {(6,)}, 'R7|1|0|': set(), 'R7|0-1|': {(6,)}, 'R8|1|0|': set(), 'R8|0-1|': {(6,)}, 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|0-1|2|': set(), 'T0|0-2|1|': set(), 'T0|1-2|0|': set(), 'T0|0-1-2|': {(6,)}})
+  )
+
+
+State before abort: 
+  Diversity = 81
+    1-diversity = 21
+    2-diversity = 40
+    3-diversity = 20
+  #Auts = 0
+  #Isos = 1
+  82 calls to Minion
+  Minion total time = 0.091223 secs
+
+
+ Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../../relationaldef/main.py':
+
+        862.677833      task-clock (msec)         #    1.001 CPUs utilized          
+               374      context-switches          #    0.434 K/sec                  
+                63      cpu-migrations            #    0.073 K/sec                  
+            53,542      page-faults               #    0.062 M/sec                  
+     2,223,106,828      cycles                    #    2.577 GHz                    
+     3,411,627,681      instructions              #    1.53  insn per cycle         
+       738,189,329      branches                  #  855.695 M/sec                  
+         6,374,709      branch-misses             #    0.86% of all branches        
+
+       0.861766887 seconds time elapsed
+
