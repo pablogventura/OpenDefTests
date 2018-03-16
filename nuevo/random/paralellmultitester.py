@@ -50,7 +50,7 @@ for filein in sorted(glob.glob(path + "*.model"),key=num_order,reverse=True):
         if prepros:
             waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../../relationaldef/main.py"],fileout))
         else:
-            waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../../relationaldef/main.py"],fileout))
+            waiting.append((filein,["perf", "stat", "timeout", "--signal=SIGINT", timeout, "python3", "../../../relationaldef/main.py","--no-preprocess"],fileout))
     else:
         print ("File %s already exists" % fileout)
 
