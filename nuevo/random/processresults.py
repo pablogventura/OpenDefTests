@@ -155,7 +155,7 @@ for y_axis in ["time","diversity","definability"]:
     #fig = plt.figure()
     #ax = fig.add_subplot(111, projection='3d')
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(5, 5))
     marker=0
     max_y=-float("inf")
     min_y=float("inf")
