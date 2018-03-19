@@ -10,29 +10,38 @@ R8 density: 0.500000
 R9 density: 0.500000
 T0 density: 0.500000
 Spectrum = [3, 2, 1]
-DEFINABLE
+NOT DEFINABLE
+Counterexample:
+  Isomorphism(
+    5->1
+  from:
+    RelationalModel(universe=[5],relations={'R0|1|0|': set(), 'R0|0-1|': set(), 'R1|1|0|': set(), 'R1|0-1|': {(5,)}, 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': {(5,)}, 'R4|1|0|': set(), 'R4|0-1|': {(5,)}, 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': {(5,)}, 'R7|1|0|': set(), 'R7|0-1|': {(5,)}, 'R8|1|0|': set(), 'R8|0-1|': {(5,)}, 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|1-2|0|': set(), 'T0|0-2|1|': set(), 'T0|0-1|2|': set(), 'T0|0-1-2|': set()})
+  to:
+    RelationalModel(universe=[1],relations={'R0|1|0|': set(), 'R0|0-1|': set(), 'R1|1|0|': set(), 'R1|0-1|': {(1,)}, 'R2|1|0|': set(), 'R2|0-1|': set(), 'R3|1|0|': set(), 'R3|0-1|': {(1,)}, 'R4|1|0|': set(), 'R4|0-1|': {(1,)}, 'R5|1|0|': set(), 'R5|0-1|': set(), 'R6|1|0|': set(), 'R6|0-1|': {(1,)}, 'R7|1|0|': set(), 'R7|0-1|': {(1,)}, 'R8|1|0|': set(), 'R8|0-1|': {(1,)}, 'R9|1|0|': set(), 'R9|0-1|': set(), 'T0|2|1|0|': set(), 'T0|1-2|0|': set(), 'T0|0-2|1|': set(), 'T0|0-1|2|': set(), 'T0|0-1-2|': {(1,)}})
+  )
 
-Final state: 
-  Diversity = 10698
-    1-diversity = 38
-    2-diversity = 780
-    3-diversity = 9880
+
+State before abort: 
+  Diversity = 17
+    1-diversity = 5
+    2-diversity = 8
+    3-diversity = 4
   #Auts = 0
-  #Isos = 2
-  10700 calls to Minion
-  Minion total time = 27.946236 secs
+  #Isos = 1
+  18 calls to Minion
+  Minion total time = 0.017947 secs
 
 
  Performance counter stats for 'timeout --signal=SIGINT 45m python3 ../../../relationaldef/main.py':
 
-     408801.358321      task-clock (msec)         #    0.999 CPUs utilized          
-            53,580      context-switches          #    0.131 K/sec                  
-            13,977      cpu-migrations            #    0.034 K/sec                  
-        67,304,862      page-faults               #    0.165 M/sec                  
- 1,052,613,234,330      cycles                    #    2.575 GHz                    
- 1,603,461,646,172      instructions              #    1.52  insn per cycle         
-   346,869,526,112      branches                  #  848.504 M/sec                  
-     2,488,804,354      branch-misses             #    0.72% of all branches        
+       1243.818238      task-clock (msec)         #    1.000 CPUs utilized          
+                97      context-switches          #    0.078 K/sec                  
+                26      cpu-migrations            #    0.021 K/sec                  
+            16,460      page-faults               #    0.013 M/sec                  
+     3,133,883,722      cycles                    #    2.520 GHz                    
+     5,233,419,811      instructions              #    1.67  insn per cycle         
+     1,129,044,462      branches                  #  907.725 M/sec                  
+         5,724,703      branch-misses             #    0.51% of all branches        
 
-     409.068966754 seconds time elapsed
+       1.243419146 seconds time elapsed
 
