@@ -154,8 +154,8 @@ for y_axis in ["time","diversity","definability"]:
     #from mpl_toolkits.mplot3d import Axes3D
     #fig = plt.figure()
     #ax = fig.add_subplot(111, projection='3d')
-
-    fig, ax = plt.subplots(figsize=(2.5*(2/3.0), 2.5*(2/3.0)))
+    plt.figure(figsize=(20,10))
+    fig, ax = plt.subplots(figsize=(2.5*(2/3.0)*0.8, 2.5))#*(2/3.0)))
     marker=0
     max_y=-float("inf")
     min_y=float("inf")
@@ -179,30 +179,45 @@ for y_axis in ["time","diversity","definability"]:
             max_y=max(y+[max_y])
             min_y=min(y+[min_y])
         #dict_keys([' ', 'None', '', '-.', ':', '-', '--'])
-        ax.plot(x, y, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle="-",label="#Universe=%s"%universe)
-        if y_axis == "time" or y_axis == "diversity":
-            ax.plot(x, y2, color=(0,0,0), linewidth=1.0, marker=markers[marker], linestyle=":",label="#Universe=%s"%universe)
+        ax.plot(x, y, color=(0,0,0), alpha=0.3,linewidth=1.0, linestyle="-")
+        ax.plot(x, y, color=(0,0,0),linestyle='None',marker=markers[marker],markersize=3,label="%s"%universe)
+#        if y_axis == "time" or y_axis == "diversity":
+#            ax.plot(x, y2, color=(0,0,0), alpha=0.3,linewidth=1.0, linestyle=":")
+#            ax.plot(x, y2, color=(0,0,0),linestyle='None',marker=markers[marker],markersize=3)
         #ax.loglog(x, y, basex=2)
         ax.set_xscale('log')
+        xtickslabels = [r"$\frac{0.5}{2^4}$",r"$\frac{0.5}{2^3}$",r"$\frac{0.5}{2^2}$",r"$\frac{0.5}{2}$","$0.5$"]
         ax.set_xticks(x)
+        ax.set_xticklabels(xtickslabels)
+        plt.xticks(fontsize=7)
+        plt.yticks(fontsize=7)
+        plt.tick_params(axis='y', pad=0.5, which='both', labelsize=7)
+        plt.tick_params(axis='x', which='both', labelsize=7)
+        #import ipdb;ipdb.set_trace();
         ax.set_xlim([0.5/2**4.2,0.5/2**-0.2])
-        ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
+        #ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
         marker+=1
 
-    handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles, labels)
-    legend = ax.legend(loc='lower right')
-    legend.get_frame().set_alpha(0.5)
+    #handles, labels = ax.get_legend_handles_labels()
+    #ax.legend(handles, labels)
+    #legend = ax.legend(loc='lower right')
+    #legend.get_frame().set_alpha(0.5)
     s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
-    fig.suptitle('Random tests, configuration=%s' % (s_conf), fontsize=14, fontweight='bold')
-    ax.set_xlabel('Density')
+    if arity == 2:
+        fig.suptitle("$%s$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
+    elif arity == 3:
+        fig.suptitle("$%s$ base binary relations\n and a target ternary relation" % quantity, fontsize=7)
+    else:
+        assert False, "caso no manejado"
+    ax.set_xlabel('Density',fontsize=7)
 
     if min_y == max_y:
        max_y=min_y+1 
     y_margin=(max_y-min_y)/6
     ax.set_ylim([min_y-y_margin,max_y+y_margin])
     if y_axis == "time":
-        ax.set_ylabel('Time (s)')
+        ax.set_ylabel('Time (s)', fontsize=7)
+        ax.yaxis.set_label_coords(-0.1, -0.1)
     elif y_axis == "diversity":
         ax.set_ylabel('Diversity ($|\mathcal{S}|$)')
     elif y_axis == "definability":
@@ -210,9 +225,9 @@ for y_axis in ["time","diversity","definability"]:
     else:
         raise IndexError
     if titulo:
-        plt.savefig("random_tests_%s_%s_%s.pdf"%(y_axis,s_conf.replace("/","to"),titulo))
+        plt.savefig("random_tests_%s_%s_%s.pdf"%(y_axis,s_conf.replace("/","to"),titulo), bbox_inches='tight')
     else:
-        plt.savefig("random_tests_%s_%s.pdf"%(y_axis,s_conf.replace("/","to")))
+        plt.savefig("random_tests_%s_%s.pdf"%(y_axis,s_conf.replace("/","to")), bbox_inches='tight')
     plt.clf()
 
 
