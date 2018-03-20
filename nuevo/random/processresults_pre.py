@@ -150,9 +150,6 @@ for path in ["data_3barra3_def_patrones/","data_3barra3_def_patrones_sin/"]:
 
     y_axis = "time"
 
-    plt.figure(figsize=(20,10))
-    fig, ax = plt.subplots(figsize=(2.5*(2/3.0)*0.8, 2.5))#*(2/3.0)))
-    marker=0
     max_y=-float("inf")
     min_y=float("inf")
     for universe in range(min_universo,max_universo+1,paso_universo):
@@ -200,9 +197,9 @@ for path in ["data_3barra3_def_patrones/","data_3barra3_def_patrones_sin/"]:
 #legend.get_frame().set_alpha(0.5)
 s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
 if arity == 2:
-    fig.suptitle("$%s$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
+    fig.suptitle("$10$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
 elif arity == 3:
-    fig.suptitle("$%s$ base binary relations\n and a target ternary relation" % quantity, fontsize=7)
+    fig.suptitle("$10$ base binary relations\n and a target ternary relation" , fontsize=7)
 else:
     assert False, "caso no manejado"
 ax.set_xlabel('Density',fontsize=7)
