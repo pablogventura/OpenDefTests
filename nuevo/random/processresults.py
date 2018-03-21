@@ -203,13 +203,15 @@ for y_axis in ["time","diversity","definability"]:
     #legend = ax.legend(loc='lower right')
     #legend.get_frame().set_alpha(0.5)
     s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
-    if arity == 2:
-        fig.suptitle("$%s$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
-    elif arity == 3:
-        fig.suptitle("$%s$ base binary relations\n and a target ternary relation" % quantity, fontsize=7)
-    else:
-        assert False, "caso no manejado"
+    
+#    if arity == 2:
+#        fig.suptitle("$%s$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
+#    elif arity == 3:
+#        fig.suptitle("$%s$ base binary relations\n and a target ternary relation" % quantity, fontsize=7)
+#    else:
+#        assert False, "caso no manejado"
     ax.set_xlabel('Density',fontsize=7)
+    ax.tick_params(axis='x',which='minor',bottom='off')
 
     if min_y == max_y:
        max_y=min_y+1 
