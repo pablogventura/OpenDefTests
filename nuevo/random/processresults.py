@@ -7,7 +7,7 @@ import glob, os
 from types import SimpleNamespace
 import sys
 import re
-
+from num2words import num2words
 timeouts=0
 
 try:
@@ -156,7 +156,10 @@ for y_axis in ["time","diversity","definability"]:
     #ax = fig.add_subplot(111, projection='3d')
     plt.figure(figsize=(20,10))
     fig, ax = plt.subplots(figsize=(2.5*(2/3.0)*0.8, 2.5))#*(2/3.0)))
-    marker=0
+    if arity == 2:
+        marker=1
+    else:
+        marker=0
     max_y=-float("inf")
     min_y=float("inf")
     for universe in range(min_universo,max_universo+1,paso_universo):
@@ -204,12 +207,19 @@ for y_axis in ["time","diversity","definability"]:
     #legend.get_frame().set_alpha(0.5)
     s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
     
-#    if arity == 2:
-#        fig.suptitle("$%s$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
-#    elif arity == 3:
-#        fig.suptitle("$%s$ base binary relations\n and a target ternary relation" % quantity, fontsize=7)
-#    else:
-#        assert False, "caso no manejado"
+    d_titulos=0.85
+    if arity == 2:
+        if quantity == 1:
+            fig.suptitle("%s base relation" % num2words(quantity).title(), fontsize=7,y =d_titulos)
+        else:
+            fig.suptitle("%s base relations" % num2words(quantity).title(), fontsize=7,y =d_titulos)
+    elif arity == 3:
+        if quantity == 1:
+            fig.suptitle("%s base relation" % num2words(quantity).title(), fontsize=7,y =d_titulos)
+        else:
+            fig.suptitle("%s base relations" % num2words(quantity).title(), fontsize=7,y =d_titulos)
+    else:
+        assert False, "caso no manejado"
     ax.set_xlabel('Density',fontsize=7)
     ax.tick_params(axis='x',which='minor',bottom='off')
 

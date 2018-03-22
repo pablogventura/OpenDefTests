@@ -12,13 +12,16 @@ timeouts=0
 plt.figure(figsize=(20,10))
 fig, ax = plt.subplots(figsize=(2.5*(2/3.0)*0.8, 2.5))#*(2/3.0)))
 marker=0
-for path in ["data_3barra3_def_patrones/","data_3barra3_def_patrones_sin/"]:
+max_y=-float("inf")
+min_y=float("inf")
+for path in ["data_a3_q1_def/","data_a3_q5_def/","data_a3_q10_def/"]:
+    print ("*/*") 
 
 
-    min_universo = 20
-    max_universo = 20
+    min_universo = 40
+    max_universo = 40
     paso_universo = 10
-    titulo ="preproceso"
+    titulo ="mezclabase"
 
     data = defaultdict(lambda : defaultdict(lambda : SimpleNamespace(diversities=[],
                                                                       times=[],
@@ -146,50 +149,50 @@ for path in ["data_3barra3_def_patrones/","data_3barra3_def_patrones_sin/"]:
     print("")
 
     markers=[".","o","v","^","<",">","1","2","3","4","8","s","p","P","*","h","H","+","x","X","D","d","|","_"]
-    markers=["*","+"]
+    markers=["D","d","x","h"]
 
     y_axis = "time"
 
-    max_y=-float("inf")
-    min_y=float("inf")
-    for universe in range(min_universo,max_universo+1,paso_universo):
-        x=[]
-        y=[]
-        y2=[]
-        for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
-            #print("        Diversity: %s" % np.median(data[density][universe].diversities))
-            x.append(density)
-            if y_axis == "time":
-                y.append(np.median(data[density][universe].times))
-                y2.append(np.median(data[density][universe].minion_times))
-            elif y_axis == "diversity":
-                y.append(np.median(data[density][universe].diversities))
-                y2.append(np.median(data[density][universe].auts))
-            elif y_axis == "definability":
-                y.append(data[density][universe].definable / (data[density][universe].total-data[density][universe].cancelled) *100)
-            else:
-                raise IndexError
-            max_y=max(y+[max_y])
-            min_y=min(y+[min_y])
-        #dict_keys([' ', 'None', '', '-.', ':', '-', '--'])
-        ax.plot(x, y, color=(0,0,0), alpha=0.3,linewidth=1.0, linestyle="-")
-        ax.plot(x, y, color=(0,0,0),linestyle='None',marker=markers[marker],markersize=3,label="%s"%universe)
-    #        if y_axis == "time" or y_axis == "diversity":
-    #            ax.plot(x, y2, color=(0,0,0), alpha=0.3,linewidth=1.0, linestyle=":")
-    #            ax.plot(x, y2, color=(0,0,0),linestyle='None',marker=markers[marker],markersize=3)
-        #ax.loglog(x, y, basex=2)
-        ax.set_xscale('log')
-        xtickslabels = [r"$\frac{0.5}{2^4}$",r"$\frac{0.5}{2^3}$",r"$\frac{0.5}{2^2}$",r"$\frac{0.5}{2}$","$0.5$"]
-        ax.set_xticks(x)
-        ax.set_xticklabels(xtickslabels)
-        plt.xticks(fontsize=7)
-        plt.yticks(fontsize=7)
-        plt.tick_params(axis='y', pad=0.5, which='both', labelsize=7)
-        plt.tick_params(axis='x', which='both', labelsize=7)
-        #import ipdb;ipdb.set_trace();
-        ax.set_xlim([0.5/2**4.2,0.5/2**-0.2])
-        #ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-        marker+=1
+
+
+    x=[]
+    y=[]
+    y2=[]
+    for density in [0.5/2**4,0.5/2**3,0.5/2**2,0.5/2**1,0.5/2**0]:
+        #print("        Diversity: %s" % np.median(data[density][universe].diversities))
+        x.append(density)
+        if y_axis == "time":
+            y.append(np.median(data[density][universe].times))
+            y2.append(np.median(data[density][universe].minion_times))
+        elif y_axis == "diversity":
+            y.append(np.median(data[density][universe].diversities))
+            y2.append(np.median(data[density][universe].auts))
+        elif y_axis == "definability":
+            y.append(data[density][universe].definable / (data[density][universe].total-data[density][universe].cancelled) *100)
+        else:
+            raise IndexError
+        max_y=max(y+[max_y])
+        min_y=min(y+[min_y])
+    #dict_keys([' ', 'None', '', '-.', ':', '-', '--'])
+    ax.plot(x, y, color=(0,0,0), alpha=0.3,linewidth=1.0, linestyle="-")
+    print((markers,marker))
+    ax.plot(x, y, color=(0,0,0),linestyle='None',marker=markers[marker],markersize=3,label="%s"%universe)
+    #if y_axis == "time" or y_axis == "diversity":
+    #    ax.plot(x, y2, color=(0,0,0), alpha=0.3,linewidth=1.0, linestyle=":")
+    #    ax.plot(x, y2, color=(0,0,0),linestyle='None',marker=markers[marker],markersize=3)
+    #ax.loglog(x, y, basex=2)
+    ax.set_xscale('log')
+    xtickslabels = [r"$\frac{0.5}{2^4}$",r"$\frac{0.5}{2^3}$",r"$\frac{0.5}{2^2}$",r"$\frac{0.5}{2}$","$0.5$"]
+    ax.set_xticks(x)
+    ax.set_xticklabels(xtickslabels)
+    plt.xticks(fontsize=7)
+    plt.yticks(fontsize=7)
+    plt.tick_params(axis='y', pad=0.5, which='both', labelsize=7)
+    plt.tick_params(axis='x', which='both', labelsize=7)
+    #import ipdb;ipdb.set_trace();
+    ax.set_xlim([0.5/2**4.2,0.5/2**-0.2])
+    #ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
+    marker+=1
 
 #handles, labels = ax.get_legend_handles_labels()
 #ax.legend(handles, labels)
@@ -207,7 +210,8 @@ ax.set_xlabel('Density',fontsize=7)
 if min_y == max_y:
    max_y=min_y+1 
 y_margin=(max_y-min_y)/6
-ax.set_ylim([min_y-y_margin,max_y+y_margin])
+print ((max_y,min_y,y_margin))
+ax.set_ylim([300,550])
 if y_axis == "time":
     ax.set_ylabel('Time (s)', fontsize=7)
     ax.yaxis.set_label_coords(-0.1, -0.1)
