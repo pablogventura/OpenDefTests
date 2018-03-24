@@ -28,12 +28,13 @@ legend.get_frame().set_edgecolor('black')
 
 export_legend(legend, filename="legend_a3.pdf")
 
-colors = [r"$\lfloor{\mathbf{A}}\rfloor$",r"$\ \mathbf{A}$"]
+colors = [r"$\lfloor{\mathbf{A}}\rfloor_{\leq k}$",r"$\ \mathbf{A}$"]
 colors.reverse()
 f = lambda m,c: plt.plot([],[],marker=m, color=c, ls="none")[0]
 handles = [f(m, "black") for m in ["+","*","D","d","|","_"]]
 labels = colors
-legend = plt.legend(handles, labels,ncol=2)
+legend = plt.legend(handles, labels,ncol=2,handletextpad=0)
 legend.get_frame().set_edgecolor('black')
 
 export_legend(legend, filename="legend_pre.pdf")
+

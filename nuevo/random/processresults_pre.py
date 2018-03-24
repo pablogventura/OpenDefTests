@@ -7,6 +7,7 @@ import glob, os
 from types import SimpleNamespace
 import sys
 import re
+from num2words import num2words
 
 timeouts=0
 plt.figure(figsize=(20,10))
@@ -196,13 +197,13 @@ for path in ["data_3barra3_def_patrones/","data_3barra3_def_patrones_sin/"]:
 #legend = ax.legend(loc='lower right')
 #legend.get_frame().set_alpha(0.5)
 s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
-if arity == 2:
-    fig.suptitle("$10$ base binary relations\n and a target binary relation" % quantity, fontsize=7)
-elif arity == 3:
-    fig.suptitle("$10$ base binary relations\n and a target ternary relation" , fontsize=7)
-else:
-    assert False, "caso no manejado"
+
+d_titulos=0.85
+
+fig.suptitle("One ternary base", fontsize=7,y =d_titulos)
+
 ax.set_xlabel('Density',fontsize=7)
+ax.tick_params(axis='x',which='minor',bottom='off')
 
 if min_y == max_y:
    max_y=min_y+1 
