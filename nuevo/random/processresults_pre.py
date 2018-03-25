@@ -200,7 +200,7 @@ s_conf = '+'.join([str(2)]*quantity)+"/"+str(arity)
 
 d_titulos=0.85
 
-fig.suptitle("One ternary base", fontsize=7,y =d_titulos)
+fig.suptitle("One $3$-ary base rel", fontsize=7,y =d_titulos)
 
 ax.set_xlabel('Density',fontsize=7)
 ax.tick_params(axis='x',which='minor',bottom='off')
